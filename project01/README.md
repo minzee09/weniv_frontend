@@ -1,6 +1,6 @@
 # Project 01: Jungle Cinema - 최신 영화 프리뷰 페이지
 
-![프로젝트 스크린샷](project01/src/images/screenshot.png)
+![프로젝트 스크린샷](./src/images/screenshot.png)
 
 ## 소개
 이 프로젝트는 HTML, CSS를 활용하여 최신 영화 정보를 프리뷰 형식으로 보여주는 웹 페이지입니다. 강의를 통해 학습한 내용을 바탕으로 실제 영화 목록 페이지를 구현했습니다.
