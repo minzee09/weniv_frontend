@@ -53,8 +53,8 @@
 }
 
 .carousel-list{
-    width: 464px;
-    height: 464px;
+    width: 348px;
+    height: 348px;
     position: relative;
     transform-style: preserve-3d; /*부모 요소의 perspective 속성을 자식 요소까지 적용*/
 }
