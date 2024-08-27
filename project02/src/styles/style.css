@@ -63,6 +63,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
     -webkit-box-reflect: below 35px linear-gradient(transparent 65%, rgba(255, 255, 255, 0.25)); /*반사 효과 - 위치/떨어진정도/투명마스크*/
     overflow: hidden;
     border-radius: 10px;
@@ -70,7 +72,7 @@
     transition: all .5s;
 }
 
-.carousel-item:first-child{
+/* .carousel-item:first-child{
     transform: rotateY(0deg) translateZ(250px);
 }
 
@@ -80,7 +82,7 @@
 
 .carousel-item:nth-child(3){
     transform: rotateY(240deg) translateZ(250px) rotateY(-240deg);
-}
+} */
 
 .carousel-item img{
     display: block;
