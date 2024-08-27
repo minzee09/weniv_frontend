@@ -10,3 +10,6 @@ Vanilla JS & HTML, CSS 마크업 연습
 ### [Project 01: 최신 영화 프리뷰 페이지](project01/README.md)
 - 최신 영화 정보를 프리뷰로 보여주는 페이지
 - 기술 스택: HTML, CSS
+### [Project 02: 3D 이미지 캐러셀](project02/README.md)
+- 3D 효과를 활용하여 이미지를 회전하며 감상할 수 있는 인터랙티브 이미지 캐러셀 페이지
+- 기술 스택: HTML, CSS, JavaScript
