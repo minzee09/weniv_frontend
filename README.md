@@ -13,3 +13,6 @@ Vanilla JS & HTML, CSS 마크업 연습
 ### [Project 02: 3D 이미지 캐러셀](project02/README.md)
 - 3D 효과를 활용하여 이미지를 회전하며 감상할 수 있는 인터랙티브 이미지 캐러셀 페이지
 - 기술 스택: HTML, CSS, JavaScript
+### [Project 03: 3D 이미지 캐러셀](project03/README.md)
+- 사용자가 영화를 평가하고 별점을 매길 수 있는 인터랙티브한 웹 애플리케이션
+- 기술 스택: HTML, CSS, JavaScript
