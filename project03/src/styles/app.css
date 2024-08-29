@@ -107,7 +107,7 @@ img{
 }
 
 .button-like.on .icon-heart{
-    background-image: url(/project03/src/images/heart_2.png);
+    background-image: url(/src/images/heart_2.png);
 }
 
 .star-average{
