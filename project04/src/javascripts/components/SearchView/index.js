@@ -30,7 +30,7 @@ export default class SearchView {
     });
 
     this.rootElement.addEventListener("click", (event) => {
-      const { target } = event.target;
+      const { target } = event;
       const isControllerButton = target.tagName == "BUTTON";
 
       if (!isControllerButton) {
@@ -63,7 +63,7 @@ export default class SearchView {
   requestPlay(target) {
     const controller = target.parentElement;
     const { index: musicIndex } = controller.dataset;
-    const payload = { music: this.music, musicIndex };
+    const payload = { music: this.searchedMusic, musicIndex };
     this.emit("play", payload);
     this.renderStopAll();
     target.classList.replace("icon-play", "icon-pause");
@@ -77,7 +77,7 @@ export default class SearchView {
   requestAddPlayList(target) {
     const controller = target.parentElement;
     const { index: musicIndex } = controller.dataset;
-    const payload = { music: this.music, musicIndex };
+    const payload = { music: this.searchedMusic, musicIndex };
     this.emit("addPlayList", payload);
   }
 

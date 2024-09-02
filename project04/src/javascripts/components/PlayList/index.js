@@ -58,7 +58,7 @@ export default class PlayList {
     this.playMusicItem(prevIndex);
   }
 
-  playMusicItem() {
+  playMusicItem(target) {
     const listItemElement =
       typeof target === "number"
         ? this.rootElement.querySelectorAll("li")[target]
