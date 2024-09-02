@@ -1,4 +1,4 @@
-import { Intro, TabButtons, TopMusic, SearchView, PlayList } from "./components/index.js";
+import { Intro, TabButtons, TopMusic, SearchView, PlayList, PlayView } from "./components/index.js";
 import { fetchMusic } from "../APIs/index.js";
 import removeAllChildNodes from "./utils/removeAllChildNodes.js";
 
@@ -20,6 +20,7 @@ export default class App {
     this.topMusic = new TopMusic();
     this.searchView = new SearchView();
     this.playList = new PlayList();
+    this.playView = new PlayView();
     this.mainViewComponents = [this.topMusic, this.playList, this.searchView];
 
     this.bindEvents();
@@ -38,10 +39,10 @@ export default class App {
 
     //탑뮤직 컴포넌트 이벤트
     this.topMusic.on("play", (payload) => {
-      // this.playView.playMusic(payload);
+      this.playView.playMusic(payload);
     });
     this.topMusic.on("pause", () => {
-      // this.playView.pause();
+      this.playView.pause();
     });
     this.topMusic.on("addPlayList", (payload) => {
       const { music, musicIndex } = payload;
@@ -50,12 +51,14 @@ export default class App {
 
     // 플레이리스트에서 음악 요청이 오면 플레이뷰에게 음악 플레이 요청
     this.playList.on("play", (payload) => {
-      // this.playView.playMusic(payload);
-      // this.playView.show();
+      this.playView.playMusic(payload);
+      this.playView.show();
     });
 
     // 멈춤 요청이 오면 플레이뷰에게 멈춤 요청
-    // this.playList.on("pause", () => { this.playView.pause(); });
+    this.playList.on("pause", () => {
+      this.playView.pause();
+    });
 
     this.searchView.on("searchMusic", (query) => {
       if (!query) {
@@ -80,14 +83,24 @@ export default class App {
     });
 
     this.searchView.on("play", (payload) => {
-      // this.playView.playMusic(payload);
+      this.playView.playMusic(payload);
     });
     this.searchView.on("pause", () => {
-      // this.playView.pause();
+      this.playView.pause();
     });
     this.searchView.on("addPlayList", (payload) => {
       const { music, musicIndex } = payload;
       this.playList.add(music[musicIndex]);
+    });
+
+    this.playView.on("backward", () => {
+      this.playList.playPrev();
+    });
+    this.playView.on("forward", () => {
+      this.playList.playNext();
+    });
+    this.playView.on("musicEnded", (payload) => {
+      this.playList.playPrev(payload);
     });
   }
 
