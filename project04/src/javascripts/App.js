@@ -1,4 +1,4 @@
-import { Intro, TabButtons, TopMusic, SearchView } from "./components/index.js";
+import { Intro, TabButtons, TopMusic, SearchView, PlayList } from "./components/index.js";
 import { fetchMusic } from "../APIs/index.js";
 import removeAllChildNodes from "./utils/removeAllChildNodes.js";
 
@@ -19,7 +19,8 @@ export default class App {
     this.tabButtons = new TabButtons();
     this.topMusic = new TopMusic();
     this.searchView = new SearchView();
-    this.mainViewComponents = [this.topMusic, "", this.searchView];
+    this.playList = new PlayList();
+    this.mainViewComponents = [this.topMusic, this.playList, this.searchView];
 
     this.bindEvents();
     // 음악을 가져온다
@@ -44,8 +45,17 @@ export default class App {
     });
     this.topMusic.on("addPlayList", (payload) => {
       const { music, musicIndex } = payload;
-      // this.playList.add(music[musicIndex]);
+      this.playList.add(music[musicIndex]);
     });
+
+    // 플레이리스트에서 음악 요청이 오면 플레이뷰에게 음악 플레이 요청
+    this.playList.on("play", (payload) => {
+      // this.playView.playMusic(payload);
+      // this.playView.show();
+    });
+
+    // 멈춤 요청이 오면 플레이뷰에게 멈춤 요청
+    // this.playList.on("pause", () => { this.playView.pause(); });
 
     this.searchView.on("searchMusic", (query) => {
       if (!query) {
@@ -77,7 +87,7 @@ export default class App {
     });
     this.searchView.on("addPlayList", (payload) => {
       const { music, musicIndex } = payload;
-      // this.playList.add(music[musicIndex]);
+      this.playList.add(music[musicIndex]);
     });
   }
 
