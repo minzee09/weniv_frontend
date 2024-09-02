@@ -64,13 +64,13 @@ export default class SearchView {
     const controller = target.parentElement;
     const { index: musicIndex } = controller.dataset;
     const payload = { music: this.music, musicIndex };
-    this.enit("play", payload);
+    this.emit("play", payload);
     this.renderStopAll();
     target.classList.replace("icon-play", "icon-pause");
   }
 
   requestPause(target) {
-    this.enit("pause");
+    this.emit("pause");
     target.classList.replace("icon-pause", "icon-play");
   }
 
@@ -78,7 +78,7 @@ export default class SearchView {
     const controller = target.parentElement;
     const { index: musicIndex } = controller.dataset;
     const payload = { music: this.music, musicIndex };
-    this.enit("addPlayList", payload);
+    this.emit("addPlayList", payload);
   }
 
   setSearchResult(musicList = []) {

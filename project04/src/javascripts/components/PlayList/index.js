@@ -75,10 +75,10 @@ export default class PlayList {
     if (!requestPlay) {
       listItemElement.classList.add("on");
       this.musicList[musicIndex].playing = true;
-      this.enit("play", { music: this.musicList, musicIndex });
+      this.emit("play", { music: this.musicList, musicIndex });
     } else {
       listItemElement.classList.remove("on");
-      this.enit("pause");
+      this.emit("pause");
     }
   }
 

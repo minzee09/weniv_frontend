@@ -50,14 +50,14 @@ export default class TopMusic {
     const controller = target.parentElement;
     const { index: musicIndex } = controller.dataset;
     const payload = { music: this.music, musicIndex };
-    this.enit("play", payload);
+    this.emit("play", payload);
     this.renderStopAll();
     target.classList.replace("icon-play", "icon-pause");
   }
 
   // 음악 중단을 App.js에 요청
   requestPause(target) {
-    this.enit("pause");
+    this.emit("pause");
     target.classList.replace("icon-pause", "icon-play");
   }
 
@@ -66,7 +66,7 @@ export default class TopMusic {
     const controller = target.parentElement;
     const { index: musicIndex } = controller.dataset;
     const payload = { music: this.music, musicIndex };
-    this.enit("addPlayList", payload);
+    this.emit("addPlayList", payload);
   }
 
   //음악 데이터를 받아오기
