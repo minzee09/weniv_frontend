@@ -1,6 +1,6 @@
-# Project 03: 뮤직 플레이
+# Project 04: 뮤직 플레이어
 
-![프로젝트 스크린샷](./src/images/screenshot.png)
+![프로젝트 스크린샷](./src/assets/images/screenshot.png)
 
 ## 소개
 사용자는 음악을 재생, 일시 정지, 탐색할 수 있으며, 음악 리스트를 관리하고 검색할 수 있습니다. 이 애플리케이션은 탭 기반의 UI를 통해 Top5 음악, 재생 목록, 검색 기능을 제공합니다.
@@ -31,7 +31,7 @@
 - **주요 메서드:**
   - `show()`: 인트로 화면을 표시하는 메서드로, 페이지 로드 시 인트로 화면을 보여줍니다.
   - `hide()`: 인트로 화면을 숨기는 메서드로, 메인 애플리케이션이 로드되면 인트로 화면을 부드럽게 제거합니다.
-![Intro.js Screenshot](./src/images/intro.png)
+![Intro.js Screenshot](./src/assets/images/intro.png)
 
 ### 3. `TabButtons.js`
 - **역할**: 상단 탭 버튼을 렌더링하고, 사용자 입력에 따라 탭을 전환
@@ -45,7 +45,7 @@
   - `requestPlay(target)`: 재생 버튼이 클릭되면 해당 음악을 재생하고, 다른 재생 중인 음악이 있으면 이를 중단하는 작업을 처리합니다.
   - `requestPause(target)`: 현재 재생 중인 음악을 일시정지합니다.
   - `requestAddPlayList(target)`: 선택된 음악을 플레이리스트에 추가하는 기능을 제공합니다.
-![TopMusic.js Screenshot](./src/images/top5.png)
+![TopMusic.js Screenshot](./src/assets/images/top5.png)
 
 ### 5. `SearchView.js`
 - **역할**: 사용자가 음악을 검색할 수 있는 인터페이스를 제공
@@ -54,7 +54,7 @@
   - `requestPlay(target)`: 검색 결과에서 선택된 음악을 재생합니다.
   - `requestPause(target)`: 검색 결과에서 재생 중인 음악을 일시정지합니다.
   - `requestAddPlayList(target)`: 검색 결과에서 선택된 음악을 플레이리스트에 추가합니다.
-![SearchView.js Screenshot](./src/images/search.png)
+![SearchView.js Screenshot](./src/assets/images/search.png)
 
 ### 6. `PlayView.js`
 - **역할**: 선택된 음악의 세부 정보를 표시하고, 재생, 일시 정지, 다음/이전 곡 이동 등을 제어
@@ -62,7 +62,7 @@
   - `playMusic(payload)`: 재생 요청이 들어온 음악을 재생하며, 현재 재생 중인 음악 정보를 화면에 업데이트합니다.
   - `pause()`: 현재 재생 중인 음악을 일시정지합니다.
   - `renderMusicContainer()`: 재생 중인 음악의 정보를 화면에 표시하고, 음악 컨트롤 버튼(재생, 일시정지, 다음, 이전 등)을 렌더링합니다.
-![PlayView.js Screenshot](./src/images/playview.png)
+![PlayView.js Screenshot](./src/assets/images/playview.png)
 
 ### 6. `PlayList.js`
 - **역할**: 사용자가 관리할 수 있는 음악 재생 목록을 표시
@@ -70,7 +70,7 @@
   - `add(music)`: 현재 재생 목록에 새로운 음악을 추가하고, 로컬 스토리지에 저장합니다.
   - `remove(index)`: 재생 목록에서 지정된 인덱스의 음악을 제거하고, 로컬 스토리지에 저장합니다.
   - `playMusicItem(target)`: 재생 목록에서 선택된 음악을 재생하고, 선택된 상태로 표시합니다.
-![PlayList.js Screenshot](./src/images/playlist.png)
+![PlayList.js Screenshot](./src/assets/images/playlist.png)
 
 ## 학습 포인트
 - **JavaScript 이벤트 처리**: 각 컴포넌트 간의 이벤트를 처리하고 통신하는 방법을 배웁니다.
