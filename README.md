@@ -16,3 +16,6 @@ Vanilla JS & HTML, CSS 마크업 연습
 ### [Project 03: 영화 별점 평가 웹 애플리케이션](project03/README.md)
 - 사용자가 영화를 평가하고 별점을 매길 수 있는 인터랙티브한 웹 애플리케이션
 - 기술 스택: HTML, CSS, JavaScript
+### [Project 04: 음악 플레이어](project04/README.md)
+- 사용자 인터페이스를 통해 음악을 재생, 일시 정지, 탐색할 수 있으며, 재생 목록을 관리하고 검색할 수 있는 웹 애플리케이션
+- 기술 스택: HTML, CSS, JavaScript
