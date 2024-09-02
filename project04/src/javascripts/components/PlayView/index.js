@@ -79,8 +79,8 @@ export default class PlayView {
         </div>
         <div class="play-view-controller">
             <div class="controller-container">
-                <button class="control-button control-repeat ${this.repeat ? "on" : ""}">
-                    <i class="icon-controller-repeat"></i>
+                <button class="control-button control-random" ${this.random ? "on" : ""}>
+                    <i class="icon-controller-random"></i>
                 </button>
                 <button class="control-button control-backward">
                     <i class="icon-controller-backward"></i>
@@ -94,8 +94,8 @@ export default class PlayView {
                 <button class="control-button control-forward">
                     <i class="icon-controller-forward"></i>
                 </button>
-                <button class="control-button control-rotate" ${this.random ? "on" : ""}>
-                    <i class="icon-controller-rotate"></i>
+                <button class="control-button control-repeat ${this.repeat ? "on" : ""}">
+                    <i class="icon-controller-repeat"></i>
                 </button>
               </div>
               <div class="progress-container">
@@ -115,7 +115,7 @@ export default class PlayView {
     const forwardButton = this.rootElement.querySelector(".control-forward");
     const backwardButton = this.rootElement.querySelector(".control-backward");
     const repeat = this.rootElement.querySelector(".control-repeat");
-    const random = this.rootElement.querySelector(".control-rotate");
+    const random = this.rootElement.querySelector(".control-random");
     const progress = this.rootElement.querySelector(".progress");
 
     playButton.addEventListener("click", () => {
