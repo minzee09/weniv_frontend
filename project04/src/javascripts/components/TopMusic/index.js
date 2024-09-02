@@ -104,8 +104,8 @@ export default class TopMusic {
             <li>
                 <div class="music-rank">${index + 1}</div>
                 <div class="music-content">
-                    <div class="music-cover">
-                        <div class="music-data">
+                    <div class="music-data">
+                        <div class="music-cover">
                             <img src="${cover}" />
                         </div>
                         <div class="music-info">
