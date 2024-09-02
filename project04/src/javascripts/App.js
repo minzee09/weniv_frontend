@@ -1,4 +1,4 @@
-import { Intro, TabButtons, TopMusic } from "./components/index.js";
+import { Intro, TabButtons, TopMusic, SearchView } from "./components/index.js";
 import { fetchMusic } from "../APIs/index.js";
 import removeAllChildNodes from "./utils/removeAllChildNodes.js";
 
@@ -18,7 +18,8 @@ export default class App {
     this.intro = new Intro();
     this.tabButtons = new TabButtons();
     this.topMusic = new TopMusic();
-    this.mainViewComponents = [this.topMusic];
+    this.searchView = new SearchView();
+    this.mainViewComponents = [this.topMusic, "", this.searchView];
 
     this.bindEvents();
     // 음악을 가져온다
@@ -28,7 +29,7 @@ export default class App {
 
   bindEvents() {
     // 탭버튼 컴포넌트 이벤트
-    this.tabButtons.on("clicktab", (payload) => {
+    this.tabButtons.on("clickTab", (payload) => {
       const { currentIndex = 0 } = payload;
       this.currentMainIndex = currentIndex;
       this.render();
@@ -42,6 +43,39 @@ export default class App {
       // this.playView.pause();
     });
     this.topMusic.on("addPlayList", (payload) => {
+      const { music, musicIndex } = payload;
+      // this.playList.add(music[musicIndex]);
+    });
+
+    this.searchView.on("searchMusic", (query) => {
+      if (!query) {
+        return this.searchView.setSearchResult([]);
+      }
+
+      const searchedMusic = this.topMusic.music.filter((music) => {
+        const { artist, title } = music;
+        const upperCaseQuery = query.toUpperCase();
+        // 아티스트 찾기
+        const filteringName = artist.some((artist) =>
+          artist.toUpperCase().includes(upperCaseQuery),
+        );
+        // 제목 찾기
+        const filteringTitle = title.toUpperCase().includes(upperCaseQuery);
+
+        return filteringName || filteringTitle;
+      });
+
+      // 찾은 결과를 검색뷰에 반환
+      this.searchView.setSearchResult(searchedMusic);
+    });
+
+    this.searchView.on("play", (payload) => {
+      // this.playView.playMusic(payload);
+    });
+    this.searchView.on("pause", () => {
+      // this.playView.pause();
+    });
+    this.searchView.on("addPlayList", (payload) => {
       const { music, musicIndex } = payload;
       // this.playList.add(music[musicIndex]);
     });
